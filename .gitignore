@@ -34,3 +34,6 @@ data/
 
 # Claude
 .claude/
+
+# Superpowers specs
+docs/superpowers/
