@@ -1,0 +1,16 @@
+[Unit]
+Description=WB Price Tracker Bot
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/wb_price_tracker
+ExecStart=/opt/wb_price_tracker/venv/bin/python main.py
+Restart=on-failure
+RestartSec=5
+EnvironmentFile=/opt/wb_price_tracker/.env
+
+# Playwright needs /dev/shm for Chromium shared memory
+PrivateTmp=false
+
+[Install]
+WantedBy=multi-user.target
